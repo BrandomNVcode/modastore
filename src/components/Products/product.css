@@ -1,0 +1,16 @@
+
+.info-basic {
+    height: 400px;
+    max-width: 320px;
+}
+
+
+
+.fav:hover svg {
+    color: #f00 !important;
+}
+
+.img-info {
+    width: calc(50% - 0.5rem);
+}
+
