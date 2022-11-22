@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-export const NavBar = () => {
+export const NavBar = ({fixed=true}) => {
 
 
     const [collapse, setCollapse] = useState(true);
@@ -13,7 +13,7 @@ export const NavBar = () => {
 
 
     return (
-        <header className='navbar w-full px-8 sm:px-20 sm:py-1 bg-white border-b-2 border-yellow-100 fixed top-0 z-20'>
+        <header className={`navbar w-full px-8 sm:px-20 sm:py-1 bg-white border-b-2 border-yellow-100 ${fixed? 'fixed' : ' '} top-0 z-20`}>
             <nav className="px-2 sm:px-4 py-2.5">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
 
