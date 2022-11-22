@@ -5,6 +5,7 @@ import {
     Route
 } from "react-router-dom";
 import { LoginScreen } from '../pages/Auth/LoginScreen';
+import { RegisterScreen } from '../pages/Auth/RegisterScreen';
 import { Home } from '../pages/Home/Home';
 import { Order } from '../pages/Order/Order';
 import { Product } from '../pages/Product/Product';
@@ -22,6 +23,7 @@ export const AppRouter = () => {
                     <Route path='/store' element={<Store />}/>
                     <Route path='/order' element={<Order />}/>
                     <Route path='/auth/login' element={<LoginScreen />}/>
+                    <Route path='/auth/register' element={<RegisterScreen />}/>
                 </Routes>
             </BrowserRouter>
         </>
