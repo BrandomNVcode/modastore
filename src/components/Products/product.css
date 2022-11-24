@@ -10,6 +10,10 @@
     color: #f00 !important;
 }
 
+.favSearch:hover svg {
+    color: #5B2C6F !important;
+}
+
 .img-info {
     width: calc(50% - 0.5rem);
 }

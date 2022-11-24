@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Avatar } from '@mui/material';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Avatar, Badge } from '@mui/material';
 import { deepOrange } from '@mui/material/colors';
 
 
@@ -42,7 +43,12 @@ export const NavBar = ({fixed=true}) => {
                                     uid?
                                     <>
                                         <li>
-                                            <a href="#" className="block py-2 text-end font-semibold">Mi lista</a>
+                                            <a href="#" className="block py-2 text-end font-semibold">
+                                                <span className='pr-4'>
+                                                    <ShoppingCartOutlinedIcon />
+                                                </span>
+                                                Mi lista
+                                            </a>
                                         </li>
                                         <li>
                                             <a href="#" className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</a>
@@ -77,14 +83,24 @@ export const NavBar = ({fixed=true}) => {
                         uid &&
 
                         <div className='hidden md:flex justify-center items-center gap-4'>
+                            <div className='mr-4 cursor-pointer'>
+                                <Badge color="secondary" badgeContent={0} showZero>
+                                    <ShoppingCartOutlinedIcon />
+                                </Badge>
+                            </div>
                             <span className='font-semibold text-slate-700'>Bienvenido, {name}</span>
                             <div className='relative'>
-                                <div onClick={() => setAvatarClick(!avatarClick)}>
+                                <div onClick={() => setAvatarClick(!avatarClick)} className='cursor-pointer'>
                                     <Avatar sx={{ bgcolor: deepOrange[400] }}>{name.at(0)}</Avatar>
                                 </div>
                                 <ul className={`${avatarClick? '' : 'hidden'} w-48 flex justify-start items-center flex-col bg-slate-100 border border-spacing-1 rounded-lg border-slate-300 absolute top-12 right-4`}>
                                     <li>
-                                        <a href="#" className="block py-2 text-end font-semibold">Mi lista</a>
+                                        <a href="#" className="block py-2 text-end font-semibold">
+                                            <span className='pr-4'>
+                                                <ShoppingCartOutlinedIcon />
+                                            </span>
+                                            Mi lista
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="#" className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</a>
