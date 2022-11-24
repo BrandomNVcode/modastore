@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Avatar } from '@mui/material';
+import { deepOrange } from '@mui/material/colors';
+
 
 
 export const NavBar = ({fixed=true}) => {
 
 
+    const { uid, name } = useSelector(state => state.auth);
+
     const [collapse, setCollapse] = useState(true);
+    const [avatarClick, setAvatarClick] = useState(false)
 
 
     const handleCollapse = () => {
@@ -30,12 +37,28 @@ export const NavBar = ({fixed=true}) => {
                     <div className={`${collapse? 'hidden': ''} w-full md:block md:w-auto`}>
                         <div className='flex flex-col sm:flex-row-reverse sm:justify-between'>
                             <ul className="md:hidden flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                                <li>
-                                    <a href="#" className="block py-2 text-end font-semibold">Login</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="block py-2 text-end font-semibold">Register</a>
-                                </li>
+                                
+                                {
+                                    uid?
+                                    <>
+                                        <li>
+                                            <a href="#" className="block py-2 text-end font-semibold">Mi lista</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</a>
+                                        </li>
+                                    </>
+                                    :
+                                    <>
+                                        <li>
+                                            <a href="#" className="block py-2 text-end font-semibold">Login</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" className="block py-2 text-end font-semibold">Register</a>
+                                        </li>
+                                    </>
+                                }
+
                             </ul>
                             <div className='w-full border-b border-gray-400 sm:hidden'></div>
                             <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -49,14 +72,40 @@ export const NavBar = ({fixed=true}) => {
                         </div>
                     </div>
 
-                    <ul className="hidden md:flex md:flex-row sm:p-4">
-                        <li>
-                            <a href="#" className="block py-2 pr-4 text-end font-semibold">Login</a>
-                        </li>
-                        <li>
-                            <a href="#" className="block py-2 text-end font-semibold">Register</a>
-                        </li>
-                    </ul>
+
+                    {
+                        uid &&
+
+                        <div className='hidden md:flex justify-center items-center gap-4'>
+                            <span className='font-semibold text-slate-700'>Bienvenido, {name}</span>
+                            <div className='relative'>
+                                <div onClick={() => setAvatarClick(!avatarClick)}>
+                                    <Avatar sx={{ bgcolor: deepOrange[400] }}>{name.at(0)}</Avatar>
+                                </div>
+                                <ul className={`${avatarClick? '' : 'hidden'} w-48 flex justify-start items-center flex-col bg-slate-100 border border-spacing-1 rounded-lg border-slate-300 absolute top-12 right-4`}>
+                                    <li>
+                                        <a href="#" className="block py-2 text-end font-semibold">Mi lista</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+
+                    {
+                        !uid &&
+                        <ul className="hidden md:flex md:flex-row sm:p-4">
+                            <li>
+                                <a href="#" className="block py-2 pr-4 text-end font-semibold">Login</a>
+                            </li>
+                            <li>
+                                <a href="#" className="block py-2 text-end font-semibold">Register</a>
+                            </li>
+                        </ul>
+                    }
+
 
                 </div>
             </nav>

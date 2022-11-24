@@ -44,7 +44,8 @@
 .newsletter-area {
     padding: 120px 0;
     position: relative;
-    background-image: url('img/contact.jpg');
+    background-color: #abe278;
+    background-image: url('/public/img/contact.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { authLogin } from '../../redux/features/auth/authSlice';
 
 
 export const Login = () => {
+
+    const dispatch = useDispatch();
 
     const [desabilitar, setDesabilitar] = useState(false);
     const [dataForm, setDataForm] = useState({});
@@ -24,6 +28,7 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        dispatch(authLogin());
     }
 
 
