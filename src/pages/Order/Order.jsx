@@ -5,6 +5,7 @@ import { OrderSummary } from '../../components/Order/OrderSummary';
 
 
 export const Order = () => {
+
     return (
         <>
             <NavBar />

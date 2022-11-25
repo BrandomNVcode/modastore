@@ -484,3 +484,5 @@ export const productHombre = [
 
 
 
+export const products = [].concat(...productHombre);
+

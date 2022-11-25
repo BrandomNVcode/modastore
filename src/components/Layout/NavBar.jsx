@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Avatar, Badge } from '@mui/material';
@@ -8,8 +9,10 @@ import { deepOrange } from '@mui/material/colors';
 
 export const NavBar = ({fixed=true}) => {
 
+    const navegacion = useNavigate();
 
     const { uid, name } = useSelector(state => state.auth);
+    const { orders } = useSelector(state => state.order);
 
     const [collapse, setCollapse] = useState(true);
     const [avatarClick, setAvatarClick] = useState(false)
@@ -83,8 +86,8 @@ export const NavBar = ({fixed=true}) => {
                         uid &&
 
                         <div className='hidden md:flex justify-center items-center gap-4'>
-                            <div className='mr-4 cursor-pointer'>
-                                <Badge color="secondary" badgeContent={0} showZero>
+                            <div className='mr-4 cursor-pointer' onClick={() => navegacion('order')}>
+                                <Badge color="secondary" badgeContent={orders.length} showZero>
                                     <ShoppingCartOutlinedIcon />
                                 </Badge>
                             </div>
