@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Avatar, Badge } from '@mui/material';
 import { deepOrange } from '@mui/material/colors';
+import { sesion_destroy } from '../../helpers/sesion';
+import { authDestroy } from '../../redux/features/auth/authSlice';
 
 
 
 export const NavBar = ({fixed=true}) => {
 
+    const dispatch = useDispatch();
     const navegacion = useNavigate();
 
     const { uid, name } = useSelector(state => state.auth);
@@ -20,6 +23,11 @@ export const NavBar = ({fixed=true}) => {
 
     const handleCollapse = () => {
         setCollapse(!collapse);
+    }
+
+    const handleLogout = () => {
+        sesion_destroy();
+        dispatch(authDestroy());
     }
 
 
@@ -54,7 +62,9 @@ export const NavBar = ({fixed=true}) => {
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#" className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</a>
+                                            <div onClick={handleLogout}>
+                                                <span className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</span>
+                                            </div>
                                         </li>
                                     </>
                                     :
@@ -86,7 +96,7 @@ export const NavBar = ({fixed=true}) => {
                         uid &&
 
                         <div className='hidden md:flex justify-center items-center gap-4'>
-                            <div className='mr-4 cursor-pointer' onClick={() => navegacion('order')}>
+                            <div className='mr-4 cursor-pointer' onClick={() => navegacion('/order')}>
                                 <Badge color="secondary" badgeContent={orders.length} showZero>
                                     <ShoppingCartOutlinedIcon />
                                 </Badge>
@@ -106,7 +116,9 @@ export const NavBar = ({fixed=true}) => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</a>
+                                        <div onClick={handleLogout}>
+                                            <span className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</span>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>

@@ -12,12 +12,15 @@ export const authSlice = createSlice({
         authLogin: (state) => {
             state.name = 'Carlos',
             state.uid = 'as5d15sa1d5sa1d5sa'
+        },
+        authDestroy: (state) => {
+            return initialState
         }
     }
 })
 
 // Action creators are generated for each case reducer function
-export const { authLogin } = authSlice.actions
+export const { authLogin, authDestroy } = authSlice.actions
 
 export default authSlice.reducer
 

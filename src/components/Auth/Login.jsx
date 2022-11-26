@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { sesion_start } from '../../helpers/sesion';
 import { authLogin } from '../../redux/features/auth/authSlice';
+
+
+
+const demoUser = {
+    email: 'user_demo@gmail.com',
+    password: 'demodemo'
+};
 
 
 export const Login = () => {
@@ -8,7 +16,7 @@ export const Login = () => {
     const dispatch = useDispatch();
 
     const [desabilitar, setDesabilitar] = useState(false);
-    const [dataForm, setDataForm] = useState({});
+    const [dataForm, setDataForm] = useState(demoUser);
 
 
 
@@ -29,6 +37,7 @@ export const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(authLogin());
+        sesion_start();
     }
 
 
@@ -45,6 +54,7 @@ export const Login = () => {
                         id="email"
                         name="email"
                         placeholder="Correo electrónico"
+                        value={demoUser.email}
                         onChange={handleChange}
                     />
                 </div>
@@ -55,6 +65,7 @@ export const Login = () => {
                         id="password"
                         name="password"
                         placeholder="Contraseña"
+                        value={demoUser.password}
                         onChange={handleChange}
                     />
                 </div>

@@ -1,21 +1,34 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     BrowserRouter,
     Routes,
     Route,
     Navigate
 } from "react-router-dom";
+import { sesion } from '../helpers/sesion';
 import { LoginScreen } from '../pages/Auth/LoginScreen';
 import { RegisterScreen } from '../pages/Auth/RegisterScreen';
 import { Home } from '../pages/Home/Home';
 import { Order } from '../pages/Order/Order';
 import { Product } from '../pages/Product/Product';
 import { Store } from '../pages/Store/Store';
+import { authLogin } from '../redux/features/auth/authSlice';
 
 
 
 export const AppRouter = () => {
+
+    const dispatch = useDispatch();
+
+    const [load, setLoad] = useState(true);
+
+    useEffect(() => {
+        if(sesion()) {
+            dispatch(authLogin());
+        }
+        setLoad(false);
+    }, [])
 
 
     const { uid } = useSelector(state => state.auth);
@@ -23,6 +36,10 @@ export const AppRouter = () => {
 
     return (
         <>
+        {
+            load?
+            <div>Cargando...</div>
+            :
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={<Home />}/>
@@ -33,6 +50,7 @@ export const AppRouter = () => {
                     <Route path='/auth/register' element={!uid? <RegisterScreen /> : <Navigate to={'/'}/>}/>
                 </Routes>
             </BrowserRouter>
+        }
         </>
     )
 }
