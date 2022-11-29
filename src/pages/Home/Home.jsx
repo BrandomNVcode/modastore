@@ -2,6 +2,9 @@ import React from 'react';
 import '../styles.css';
 
 import MopedIcon from '@mui/icons-material/Moped';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import SecurityIcon from '@mui/icons-material/Security';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
 import { Beneficios } from '../../components/Layout/Beneficios';
 import { Main } from '../../components/Layout/Main';
 import { NavBar } from '../../components/Layout/NavBar';
@@ -11,6 +14,8 @@ import { Footer } from '../../components/Layout/Footer';
 
 
 export const Home = () => {
+
+
     return (
         <>
             <NavBar />
@@ -25,37 +30,37 @@ export const Home = () => {
                 <div className="my-12 flex justify-around flex-wrap mx-12">
                     <div className="mt-6">
                         <Beneficios
-                            beneficio={'Envio Rapido'}
-                            desc={'lorem lorem lorem lorem lorem lorem lorem lorem lorem jajaja envio rapido a todo le pais'}
+                            beneficio={'Envio rapido'}
+                            desc={'Para todas las compras superiores a $99 el envío es gratuito.'}
                         >
-                            <MopedIcon fontSize="large"/>
+                            <MopedIcon fontSize="large" htmlColor='#c88'/>
                         </Beneficios>
                     </div>
 
                     <div className="mt-6">
                         <Beneficios
-                            beneficio={'Envio Rapido'}
-                            desc={'lorem lorem lorem lorem lorem lorem lorem lorem lorem jajaja envio rapido a todo le pais'}
+                            beneficio={'Pagos sencillos'}
+                            desc={'Todos los pagos son instántaneamente procesados a través de un seguro protocolo de pago.'}
                         >
-                            <MopedIcon fontSize="large"/>
+                            <CurrencyExchangeIcon fontSize="large" htmlColor='#c88'/>
                         </Beneficios>
                     </div>
 
                     <div className="mt-6">
                         <Beneficios
-                            beneficio={'Envio Rapido'}
-                            desc={'lorem lorem lorem lorem lorem lorem lorem lorem lorem jajaja envio rapido a todo le pais'}
+                            beneficio={'Garantía de devolución de tu dinero'}
+                            desc={'Si un artículo llegó dañado o si cambia de opinión, puede devolverlo y tener un reembolso completo.'}
                         >
-                            <MopedIcon fontSize="large"/>
+                            <SecurityIcon fontSize="large" htmlColor='#c88'/>
                         </Beneficios>
                     </div>
 
                     <div className="mt-6">
                         <Beneficios
-                            beneficio={'Envio Rapido'}
-                            desc={'lorem lorem lorem lorem lorem lorem lorem lorem lorem jajaja envio rapido a todo le pais'}
+                            beneficio={'Calidad selecta'}
+                            desc={'Diseñado para durar, cada uno de nuestros productos ha sido elaborado con los mejores materiales.'}
                         >
-                            <MopedIcon fontSize="large"/>
+                            <AutoGraphIcon fontSize="large" htmlColor='#c88'/>
                         </Beneficios>
                     </div>
                 </div>

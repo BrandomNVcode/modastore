@@ -1,33 +1,66 @@
 import React from 'react';
+import { category } from '../../data/products';
 
 
 export const Filter = () => {
     return (
         <form className="border-t border-yellow-500 lg:border-t-0">
-            <fieldset>
-                <legend className="block w-full bg-yellow-100 px-5 py-3 text-xs font-medium">Type</legend>
+            <div>
+                <fieldset>
+                    <legend className="block w-full bg-yellow-100 px-5 py-3 text-xs font-medium">Ropa para..</legend>
 
-                <div className="space-y-2 px-5 py-6">
+                    <div className="space-y-2 px-5 py-6">
                     <div className="flex items-center">
-                        <input id="toy" type="checkbox" name="type[toy]" className="h-5 w-5 rounded border-gray-300"/>
-                        <label for="toy" className="ml-3 text-sm font-medium">Toy</label>
-                    </div>
+                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
+                            <label for="game" className="ml-3 text-sm font-medium">Todos los generos</label>
+                        </div>
 
-                    <div className="flex items-center">
-                        <input id="game" type="checkbox" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
-                        <label for="game" className="ml-3 text-sm font-medium">Game</label>
+                        <div className="flex items-center">
+                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
+                            <label for="game" className="ml-3 text-sm font-medium">Hombre</label>
+                        </div>
+
+                        <div className="flex items-center">
+                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
+                            <label for="game" className="ml-3 text-sm font-medium">Mujer</label>
+                        </div>
+
+                        <div className="flex items-center">
+                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
+                            <label for="game" className="ml-3 text-sm font-medium">Niños</label>
+                        </div>
                     </div>
-                </div>
-            </fieldset>
+                </fieldset>
+            </div>
 
             <div>
                 <fieldset>
-                    <legend className="block w-full bg-yellow-100 px-5 py-3 text-xs font-medium">Age</legend>
+                    <legend className="block w-full bg-yellow-100 px-5 py-3 text-xs font-medium">Categoria</legend>
 
                     <div className="space-y-2 px-5 py-6">
                         <div className="flex items-center">
-                            <input id="3+" type="checkbox" name="age[3+]" className="h-5 w-5 rounded border-gray-300"/>
-                            <label for="3+" className="ml-3 text-sm font-medium">3+</label>
+                            <input id={category.camisa} type="checkbox" name={category.camisa} className="h-5 w-5 rounded border-gray-300"/>
+                            <label for={category.camisa} className="ml-3 text-sm font-medium">Camisas</label>
+                        </div>
+                        <div className="flex items-center">
+                            <input id={category.polo} type="checkbox" name={category.polo} className="h-5 w-5 rounded border-gray-300"/>
+                            <label for={category.polo} className="ml-3 text-sm font-medium">Polos</label>
+                        </div>
+                        <div className="flex items-center">
+                            <input id={category.polera} type="checkbox" name={category.polera} className="h-5 w-5 rounded border-gray-300"/>
+                            <label for={category.polera} className="ml-3 text-sm font-medium">Poleras</label>
+                        </div>
+                        <div className="flex items-center">
+                            <input id={category.pantalon} type="checkbox" name={category.pantalon} className="h-5 w-5 rounded border-gray-300"/>
+                            <label for={category.pantalon} className="ml-3 text-sm font-medium">Pantalones</label>
+                        </div>
+                        <div className="flex items-center">
+                            <input id={category.short} type="checkbox" name={category.short} className="h-5 w-5 rounded border-gray-300"/>
+                            <label for={category.short} className="ml-3 text-sm font-medium">Shorts</label>
+                        </div>
+                        <div className="flex items-center">
+                            <input id={category.zapatos} type="checkbox" name={category.zapatos} className="h-5 w-5 rounded border-gray-300"/>
+                            <label for={category.zapatos} className="ml-3 text-sm font-medium">Zapatillas</label>
                         </div>
                     </div>
                 </fieldset>
@@ -39,7 +72,7 @@ export const Filter = () => {
                 </button>
 
                 <button name="commit" type="button" className="rounded bg-green-600 px-5 py-3 text-xs font-medium text-white">
-                    Apply Filters
+                    Aplicar filtros
                 </button>
             </div>
         </form>

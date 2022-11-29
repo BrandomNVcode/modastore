@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     orders: [
-        {
+        /*{
             id: 0,
             talla: 'S',
             cant: 1
@@ -16,7 +16,7 @@ const initialState = {
             id: 16,
             talla: 'L',
             cant: 1
-        },
+        },*/
     ]
 }
 

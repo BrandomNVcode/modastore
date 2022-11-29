@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ItemColor } from './Elements/ItemColor';
 
 
-export const FormShop = () => {
+export const FormShop = ({typesColor, colorSelect, setColorSelect}) => {
 
     const [cantidad, setCantidad] = useState(1);
-    const [inputColor, setInputColor] = useState('#00F');
     const [dataForm, setDataForm] = useState({
-        size: 'XL'
+        size: 'XL',
+        color: typesColor[0].color
     });
 
+    useEffect(() => {
+        setColorSelect(typesColor[0].color);
+        setDataForm({
+            ...dataForm,
+            color: typesColor[0].color
+        })
+    }, [typesColor])
+    
 
     const handleInputForm = (e) => {
         setDataForm({
             ...dataForm,
             [e.target.name]: e.target.value
         })
-    }
-
-    const handleClickColor = (color) => {
-        setInputColor(color);
     }
 
 
@@ -31,7 +35,6 @@ export const FormShop = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(inputColor)
         console.log(dataForm)
         console.log(cantidad)
     }
@@ -45,18 +48,22 @@ export const FormShop = () => {
                 <legend className="mb-1 text-sm font-medium">Color</legend>
                 <div className="flow-root">
                     <div className="-m-0.5 flex flex-wrap">
-                        <div className='mr-2'>
-                            <ItemColor color={'#00F'} handleSelect={handleClickColor}/>
-                        </div>
-                        <div className='mr-2'>
-                            <ItemColor color={'#000'} handleSelect={handleClickColor}/>
-                        </div>
-                        <div className='mr-2'>
-                            <ItemColor color={'#fff'} handleSelect={handleClickColor}/>
-                        </div>
+                        {
+                            typesColor.map((item, index) => (
+                                <label className='mr-2' key={index}>
+                                    <input type="radio" name="color" value={item.color} className="peer sr-only"
+                                            checked={item.color === colorSelect}
+                                            onClick={(e) => {
+                                                handleInputForm(e);
+                                                setColorSelect(item.color)
+                                            }}
+                                    />
+                                    <ItemColor color={item.color}/>
+                                </label>
+                            ))
+                        }
                     </div>
                 </div>
-                <input type='hidden' name='color' value={inputColor}/>
             </fieldset>
 
             <div className="mt-12">
@@ -66,8 +73,7 @@ export const FormShop = () => {
                     <div className="-m-0.5 flex flex-wrap">
 
                         <label htmlFor="size_xl" className="cursor-pointer p-0.5">
-                            <input type="radio" name="size" defaultValue="XL" id="size_xl" className="peer sr-only"
-                                    defaultChecked={true}
+                            <input type="radio" name="size" value="XL" id="size_xl" className="peer sr-only" readOnly
                                     onChange={handleInputForm}
                             />
                             <span className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
@@ -76,7 +82,7 @@ export const FormShop = () => {
                         </label>
 
                         <label htmlFor="size_sm" className="cursor-pointer p-0.5">
-                            <input type="radio" name="size" defaultValue="SM" id="size_sm" className="peer sr-only"
+                            <input type="radio" name="size" value="SM" id="size_sm" className="peer sr-only" readOnly
                                     onChange={handleInputForm}/>
                             <span className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
                                 SM
@@ -84,7 +90,7 @@ export const FormShop = () => {
                         </label>
 
                         <label htmlFor="size_s" className="cursor-pointer p-0.5">
-                            <input type="radio" name="size" defaultValue="S" id="size_s" className="peer sr-only"
+                            <input type="radio" name="size" value="S" id="size_s" className="peer sr-only" readOnly
                                     onChange={handleInputForm}/>
                             <span className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
                                 S
@@ -92,7 +98,7 @@ export const FormShop = () => {
                         </label>
 
                         <label htmlFor="size_m" className="cursor-pointer p-0.5">
-                            <input type="radio" name="size" defaultValue="M" id="size_m" className="peer sr-only"
+                            <input type="radio" name="size" value="M" id="size_m" className="peer sr-only" readOnly
                                     onChange={handleInputForm}/>
                             <span className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
                                 M
@@ -100,7 +106,7 @@ export const FormShop = () => {
                         </label>
 
                         <label htmlFor="size_l" className="cursor-pointer p-0.5">
-                            <input type="radio" name="size" defaultValue="L" id="size_l" className="peer sr-only"
+                            <input type="radio" name="size" value="L" id="size_l" className="peer sr-only" readOnly
                                     onChange={handleInputForm}/>
                             <span className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">
                                 L
@@ -120,7 +126,7 @@ export const FormShop = () => {
                         -
                     </button>
                     <input type="number" min={1} name='cantidad' value={cantidad}
-                        className="w-12 rounded border-gray-200 py-3 text-center text-xs [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
+                        className="w-12 rounded border-gray-200 py-3 font-bold text-center text-xs [-moz-appearance:_textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none border border-spacing-1"
                     />
                     <button type='button' className='bg-gray-300 shadow shadow-slate-400 px-4 rounded-full'
                             onClick={() => handleCantidad(1)}

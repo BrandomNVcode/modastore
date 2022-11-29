@@ -1,16 +1,41 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import './product.css';
 
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SearchIcon from '@mui/icons-material/Search';
+import { addOrder } from '../../redux/features/order/orderSlice';
 
 
 
 export const InfoBasic = ({item}) => {
 
 
+    const dispatch = useDispatch();
+    const navegacion = useNavigate();
+
+    const { orders } = useSelector(state => state.order);
+    const incluido = orders.find(order => order.id === item.id);
+
+    const handleAddCart = () => {
+        console.log(!incluido)
+        if(!incluido) {
+            dispatch(addOrder({
+                id: item.id,
+                talla: 'S',
+                cant: 1
+            }))
+        }
+    }
+
+
     const style = {
         color: '#F08080'
+    }
+
+    const styleNoInclude = {
+        color: '#C5C8C8'
     }
 
     const styleSearch = {
@@ -23,10 +48,13 @@ export const InfoBasic = ({item}) => {
             <div className='info-basic rounded-xl flex justify-center items-center flex-col mx-auto relative'>
 
                 <div className='absolute top-4 right-4 flex justify-center flex-col gap-3'>
-                    <div className='fav cursor-pointer p-2 bg-white shadow-lg rounded-full hover:bg-yellow-200'>
-                        <FavoriteIcon fontSize='medium' style={style}/>
+                    <div onClick={handleAddCart} 
+                        className='fav cursor-pointer p-2 bg-white shadow-lg rounded-full hover:bg-yellow-200'>
+                        <FavoriteIcon fontSize='medium' style={!incluido? style : styleNoInclude}/>
                     </div>
-                    <div className='favSearch cursor-pointer p-2 bg-white shadow-lg rounded-full hover:bg-yellow-100'>
+                    <div
+                        onClick={() => navegacion(`/product/${item.for}/${item.id}`)}
+                        className='favSearch cursor-pointer p-2 bg-white shadow-lg rounded-full hover:bg-yellow-100'>
                         <SearchIcon fontSize='medium' style={styleSearch}/>
                     </div>
                 </div>

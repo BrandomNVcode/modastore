@@ -1,18 +1,13 @@
 import React from 'react';
 
 
-export const Descripcion = () => {
+export const Descripcion = ({desc}) => {
     return (
         <details className="group relative mt-4">
             <summary className="block">
                 <div>
                     <div className="prose max-w-none group-open:hidden">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                            veniam dicta beatae eos ex error culpa delectus rem tenetur,
-                            architecto quam nesciunt, dolor veritatis nisi minus
-                            inventore, rerum at recusandae?
-                        </p>
+                        <p>{desc}</p>
                     </div>
 
                     <span className="mt-4 cursor-pointer text-sm font-medium underline group-open:absolute group-open:bottom-0 group-open:left-0 group-open:mt-0">
@@ -22,12 +17,7 @@ export const Descripcion = () => {
             </summary>
 
             <div className="prose max-w-none pb-6">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                    veniam dicta beatae eos ex error culpa delectus rem tenetur,
-                    architecto quam nesciunt, dolor veritatis nisi minus inventore,
-                    rerum at recusandae?
-                </p>
+                <p>{desc}</p>
 
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat

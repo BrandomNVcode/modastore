@@ -14,7 +14,7 @@ export const ItemOrder = ({id, img, title, price, talla, cantidad}) => {
 
 
     return (
-        <div className="flex md:flex-row justify-start items-start md:items-center  border border-gray-200 w-full">
+        <div className="relative flex md:flex-row justify-start items-start md:items-center  border border-gray-200 w-full">
             <div className="w-64 md:w-32">
                 <img className="blocK" src={img} alt={title} />
             </div>
@@ -44,6 +44,10 @@ export const ItemOrder = ({id, img, title, price, talla, cantidad}) => {
                     <p className="text-base lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-800">${(price*1.2*cantidad).toFixed(2)}</p>
                 </div>
             </div>
+
+            <button type='button' className='absolute top-0 right-0 w-5 h-5 p-0 pb-1 bg-red-400 rounded-sm cursor-pointer'>
+                <p className='text-xs text-white'>x</p>
+            </button>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Avatar, Badge } from '@mui/material';
@@ -36,7 +36,9 @@ export const NavBar = ({fixed=true}) => {
             <nav className="px-2 sm:px-4 py-2.5">
                 <div className="container flex flex-wrap justify-between items-center mx-auto">
 
-                    <a href="#" className="font-bold text-xl sm:text-3xl text-sky-900">ModaStore</a>
+                    <Link to='/'>
+                        <span className="font-bold text-xl sm:text-3xl text-sky-900">ModaStore</span>
+                    </Link>
 
                     <button 
                         onClick={handleCollapse}
@@ -54,12 +56,14 @@ export const NavBar = ({fixed=true}) => {
                                     uid?
                                     <>
                                         <li>
-                                            <a href="#" className="block py-2 text-end font-semibold">
-                                                <span className='pr-4'>
-                                                    <ShoppingCartOutlinedIcon />
-                                                </span>
-                                                Mi lista
-                                            </a>
+                                            <Link to='/order'>
+                                                <p className="block py-2 text-end font-semibold">
+                                                    <span className='pr-4'>
+                                                        <ShoppingCartOutlinedIcon />
+                                                    </span>
+                                                    Mi lista
+                                                </p>
+                                            </Link>
                                         </li>
                                         <li>
                                             <div onClick={handleLogout}>
@@ -70,10 +74,14 @@ export const NavBar = ({fixed=true}) => {
                                     :
                                     <>
                                         <li>
-                                            <a href="#" className="block py-2 text-end font-semibold">Login</a>
+                                            <Link to='/auth/login'>
+                                                <span className="block py-2 text-end font-semibold">Login</span>
+                                            </Link>
                                         </li>
                                         <li>
-                                            <a href="#" className="block py-2 text-end font-semibold">Register</a>
+                                            <Link to='/auth/register'>
+                                                <span className="block py-2 text-end font-semibold">Login</span>
+                                            </Link>
                                         </li>
                                     </>
                                 }
@@ -82,10 +90,24 @@ export const NavBar = ({fixed=true}) => {
                             <div className='w-full border-b border-gray-400 sm:hidden'></div>
                             <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                                 <li>
-                                    <a href="#" className="block py-2 text-end">Productos</a>
+                                    <Link to='/store'>
+                                        <span className="block py-2 text-end">Productos</span>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="block py-2 text-end">Sobre Nosotros</a>
+                                    <Link to='/store?type=hombre'>
+                                        <span className="block py-2 text-end">Hombre</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to='/store?type=mujer'>
+                                        <span className="block py-2 text-end">Mujer</span>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to='/store?type=nino'>
+                                        <span className="block py-2 text-end">Niños</span>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -108,12 +130,14 @@ export const NavBar = ({fixed=true}) => {
                                 </div>
                                 <ul className={`${avatarClick? '' : 'hidden'} w-48 flex justify-start items-center flex-col bg-slate-100 border border-spacing-1 rounded-lg border-slate-300 absolute top-12 right-4`}>
                                     <li>
-                                        <a href="#" className="block py-2 text-end font-semibold">
-                                            <span className='pr-4'>
-                                                <ShoppingCartOutlinedIcon />
-                                            </span>
-                                            Mi lista
-                                        </a>
+                                        <Link to='/order'>
+                                            <p className="block py-2 text-end font-semibold">
+                                                <span className='pr-4'>
+                                                    <ShoppingCartOutlinedIcon />
+                                                </span>
+                                                Mi lista
+                                            </p>
+                                        </Link>
                                     </li>
                                     <li>
                                         <div onClick={handleLogout}>
@@ -129,10 +153,14 @@ export const NavBar = ({fixed=true}) => {
                         !uid &&
                         <ul className="hidden md:flex md:flex-row sm:p-4">
                             <li>
-                                <a href="#" className="block py-2 pr-4 text-end font-semibold">Login</a>
+                                <Link to='/auth/login'>
+                                    <span className="block py-2 pr-4 text-end font-semibold">Login</span>
+                                </Link>
                             </li>
                             <li>
-                                <a href="#" className="block py-2 text-end font-semibold">Register</a>
+                                <Link to='/auth/register'>
+                                    <span className="block py-2 text-end font-semibold">Register</span>
+                                </Link>
                             </li>
                         </ul>
                     }

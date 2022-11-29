@@ -13,7 +13,7 @@ export const category = {
 export const colors = {
     crema: '#DAF7A6',
     oscuro: '#000',
-    blanco: '#FFF',
+    blanco: '#F4F6F7',
     azul: '#6495ED',
     marron: '#800000',
     lime: '#00FF00',
@@ -34,28 +34,28 @@ export const productHombre = [
             {
                 color: colors.crema,
                 img: [
-                    'img/polo/01.png',
-                    'img/polo/01.png'
+                    '/img/polo/01.png',
+                    '/img/polo/02.png'
                 ]
             },
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polo/03.png',
-                    'img/polo/04.png'
+                    '/img/polo/03.png',
+                    '/img/polo/04.png'
                 ]
             },
             {
                 color: colors.blanco,
                 img: [
-                    'img/polo/05.png',
-                    'img/polo/06.png'
+                    '/img/polo/05.png',
+                    '/img/polo/06.png'
                 ]
             }
         ]
     },
     {
-        id: 2,
+        id: 1,
         for: 'hombre',
         category: category.polo,
         name: 'Polo de deporte Regular Fit',
@@ -65,21 +65,21 @@ export const productHombre = [
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polo/07.png',
-                    'img/polo/08.png'
+                    '/img/polo/07.png',
+                    '/img/polo/08.png'
                 ]
             },
             {
                 color: colors.blanco,
                 img: [
-                    'img/polo/09.png',
-                    'img/polo/10.png'
+                    '/img/polo/09.png',
+                    '/img/polo/10.png'
                 ]
             }
         ]
     },
     {
-        id: 3,
+        id: 2,
         for: 'hombre',
         category: category.polo,
         name: 'Polo de correr en DryMove™',
@@ -89,28 +89,28 @@ export const productHombre = [
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polo/11.png',
-                    'img/polo/12.png'
+                    '/img/polo/11.png',
+                    '/img/polo/12.png'
                 ]
             },
             {
                 color: colors.blanco,
                 img: [
-                    'img/polo/13.png',
-                    'img/polo/14.png'
+                    '/img/polo/13.png',
+                    '/img/polo/14.png'
                 ]
             },
             {
                 color: colors.azul,
                 img: [
-                    'img/polo/15.png',
-                    'img/polo/16.png'
+                    '/img/polo/15.png',
+                    '/img/polo/16.png'
                 ]
             }
         ]
     },
     {
-        id: 4,
+        id: 3,
         for: 'hombre',
         category: category.polo,
         name: 'Polo en algodón premium Slim Fit',
@@ -120,22 +120,22 @@ export const productHombre = [
             {
                 color: colors.marron,
                 img: [
-                    'img/polo/17.png',
-                    'img/polo/18.png'
+                    '/img/polo/17.png',
+                    '/img/polo/18.png'
                 ]
             },
             {
                 color: colors.azul,
                 img: [
-                    'img/polo/19.png',
-                    'img/polo/20.png'
+                    '/img/polo/19.png',
+                    '/img/polo/20.png'
                 ]
             },
             {
-                color: colors.azul,
+                color: colors.blanco,
                 img: [
-                    'img/polo/21.png',
-                    'img/polo/22.png'
+                    '/img/polo/21.png',
+                    '/img/polo/22.png'
                 ]
             }
         ]
@@ -151,8 +151,8 @@ export const productHombre = [
             {
                 color: colors.blanco,
                 img: [
-                    'img/polo/23.png',
-                    'img/polo/24.png'
+                    '/img/polo/23.png',
+                    '/img/polo/24.png'
                 ]
             }
         ]
@@ -168,8 +168,8 @@ export const productHombre = [
             {
                 color: colors.marron,
                 img: [
-                    'img/polo/25.png',
-                    'img/polo/26.png'
+                    '/img/polo/25.png',
+                    '/img/polo/26.png'
                 ]
             }
         ]
@@ -185,8 +185,8 @@ export const productHombre = [
             {
                 color: colors.lime,
                 img: [
-                    'img/polo/27.png',
-                    'img/polo/28.png'
+                    '/img/polo/27.png',
+                    '/img/polo/28.png'
                 ]
             }
         ]
@@ -202,22 +202,22 @@ export const productHombre = [
             {
                 color: colors.lime,
                 img: [
-                    'img/polo/29.png',
-                    'img/polo/30.png'
+                    '/img/polo/29.png',
+                    '/img/polo/30.png'
                 ]
             },
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polo/31.png',
-                    'img/polo/32.png'
+                    '/img/polo/31.png',
+                    '/img/polo/32.png'
                 ]
             },
             {
                 color: colors.naranga,
                 img: [
-                    'img/polo/33.png',
-                    'img/polo/34.png'
+                    '/img/polo/33.png',
+                    '/img/polo/34.png'
                 ]
             }
         ]
@@ -233,8 +233,8 @@ export const productHombre = [
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polo/35.png',
-                    'img/polo/36.png'
+                    '/img/polo/35.png',
+                    '/img/polo/36.png'
                 ]
             },
         ]
@@ -250,7 +250,7 @@ export const productHombre = [
             {
                 color: colors.lime,
                 img: [
-                    'img/polo/37.png'
+                    '/img/polo/37.png'
                 ]
             },
         ]
@@ -266,15 +266,15 @@ export const productHombre = [
             {
                 color: colors.blanco,
                 img: [
-                    'img/polera/01.png',
-                    'img/polera/02.png'
+                    '/img/polera/01.png',
+                    '/img/polera/02.png'
                 ]
             },
             {
                 color: colors.marron,
                 img: [
-                    'img/polera/03.png',
-                    'img/polera/04.png'
+                    '/img/polera/03.png',
+                    '/img/polera/04.png'
                 ]
             },
         ]
@@ -290,14 +290,14 @@ export const productHombre = [
             {
                 color: colors.crema,
                 img: [
-                    'img/polera/05.png'
+                    '/img/polera/05.png'
                 ]
             },
             {
                 color: colors.lime,
                 img: [
-                    'img/polera/06.png',
-                    'img/polera/07.png'
+                    '/img/polera/06.png',
+                    '/img/polera/07.png'
                 ]
             },
         ]
@@ -313,8 +313,8 @@ export const productHombre = [
             {
                 color: colors.azul,
                 img: [
-                    'img/polera/08.png',
-                    'img/polera/09.png'
+                    '/img/polera/08.png',
+                    '/img/polera/09.png'
                 ]
             }
         ]
@@ -330,15 +330,15 @@ export const productHombre = [
             {
                 color: colors.blanco,
                 img: [
-                    'img/polera/10.png',
-                    'img/polera/11.png'
+                    '/img/polera/10.png',
+                    '/img/polera/11.png'
                 ]
             },
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polera/12.png',
-                    'img/polera/13.png'
+                    '/img/polera/12.png',
+                    '/img/polera/13.png'
                 ]
             }
         ]
@@ -354,8 +354,8 @@ export const productHombre = [
             {
                 color: colors.azul,
                 img: [
-                    'img/polera/14.png',
-                    'img/polera/15.png'
+                    '/img/polera/14.png',
+                    '/img/polera/15.png'
                 ]
             },
         ]
@@ -371,22 +371,22 @@ export const productHombre = [
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polera/16.png',
-                    'img/polera/17.png'
+                    '/img/polera/16.png',
+                    '/img/polera/17.png'
                 ]
             },
             {
                 color: colors.gris,
                 img: [
-                    'img/polera/18.png',
-                    'img/polera/19.png'
+                    '/img/polera/18.png',
+                    '/img/polera/19.png'
                 ]
             },
             {
                 color: colors.azul,
                 img: [
-                    'img/polera/20.png',
-                    'img/polera/21.png'
+                    '/img/polera/20.png',
+                    '/img/polera/21.png'
                 ]
             },
         ]
@@ -402,15 +402,15 @@ export const productHombre = [
             {
                 color: colors.blanco,
                 img: [
-                    'img/polera/22.png',
-                    'img/polera/23.png'
+                    '/img/polera/22.png',
+                    '/img/polera/23.png'
                 ]
             },
             {
                 color: colors.azul,
                 img: [
-                    'img/polera/24.png',
-                    'img/polera/25.png'
+                    '/img/polera/24.png',
+                    '/img/polera/25.png'
                 ]
             },
         ]
@@ -426,8 +426,8 @@ export const productHombre = [
             {
                 color: colors.marron,
                 img: [
-                    'img/polera/26.png',
-                    'img/polera/27.png'
+                    '/img/polera/26.png',
+                    '/img/polera/27.png'
                 ]
             },
         ]
@@ -443,8 +443,8 @@ export const productHombre = [
             {
                 color: colors.marron,
                 img: [
-                    'img/polera/28.png',
-                    'img/polera/29.png'
+                    '/img/polera/28.png',
+                    '/img/polera/29.png'
                 ]
             },
         ]
@@ -460,22 +460,22 @@ export const productHombre = [
             {
                 color: colors.oscuro,
                 img: [
-                    'img/polera/30.png',
-                    'img/polera/31.png'
+                    '/img/polera/30.png',
+                    '/img/polera/31.png'
                 ]
             },
             {
                 color: colors.marron,
                 img: [
-                    'img/polera/32.png',
-                    'img/polera/33.png'
+                    '/img/polera/32.png',
+                    '/img/polera/33.png'
                 ]
             },
             {
                 color: colors.blanco,
                 img: [
-                    'img/polera/34.png',
-                    'img/polera/35.png'
+                    '/img/polera/34.png',
+                    '/img/polera/35.png'
                 ]
             },
         ]

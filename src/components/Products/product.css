@@ -18,3 +18,29 @@
     width: calc(50% - 0.5rem);
 }
 
+
+
+/* Elements/ImagesProduct */
+
+.img-object {
+    object-position: 0 -1rem;
+}
+
+@media (min-width: 640px) {
+    .img-object {
+        object-position: 0 -1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .img-object {
+        object-position: 0 -2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .img-object {
+        object-position: 0 -4rem;
+    }
+}
+

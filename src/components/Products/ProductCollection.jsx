@@ -50,8 +50,8 @@ export const ProductCollection = () => {
                                 <option readonly>Ordenar</option>
                                 <option value="title-asc">Título, A-Z</option>
                                 <option value="title-desc">Título, Z-A</option>
-                                <option value="price-asc">Precio, Low-High</option>
-                                <option value="price-desc">Precio, High-Low</option>
+                                <option value="price-asc">Precio, Menor-Mayor</option>
+                                <option value="price-desc">Precio, Mayor-Menor</option>
                             </select>
                         </div>
                     </div>
