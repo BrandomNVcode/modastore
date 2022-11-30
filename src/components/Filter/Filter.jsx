@@ -1,38 +1,11 @@
 import React from 'react';
-import { category } from '../../data/products';
+import { category } from '../../data/basic';
 
 
 export const Filter = () => {
+
     return (
         <form className="border-t border-yellow-500 lg:border-t-0">
-            <div>
-                <fieldset>
-                    <legend className="block w-full bg-yellow-100 px-5 py-3 text-xs font-medium">Ropa para..</legend>
-
-                    <div className="space-y-2 px-5 py-6">
-                    <div className="flex items-center">
-                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
-                            <label for="game" className="ml-3 text-sm font-medium">Todos los generos</label>
-                        </div>
-
-                        <div className="flex items-center">
-                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
-                            <label for="game" className="ml-3 text-sm font-medium">Hombre</label>
-                        </div>
-
-                        <div className="flex items-center">
-                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
-                            <label for="game" className="ml-3 text-sm font-medium">Mujer</label>
-                        </div>
-
-                        <div className="flex items-center">
-                            <input id="game" type="radio" name="type[game]" className="h-5 w-5 rounded border-gray-300"/>
-                            <label for="game" className="ml-3 text-sm font-medium">Niños</label>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-
             <div>
                 <fieldset>
                     <legend className="block w-full bg-yellow-100 px-5 py-3 text-xs font-medium">Categoria</legend>

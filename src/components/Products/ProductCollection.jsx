@@ -3,7 +3,7 @@ import { Filter } from '../Filter/Filter';
 import { ProductCard } from './ProductCard';
 
 
-export const ProductCollection = () => {
+export const ProductCollection = ({listProduct=[]}) => {
 
 
 
@@ -32,7 +32,7 @@ export const ProductCollection = () => {
                             </svg>
                         </summary>
 
-                        <Filter />
+                        <Filter/>
                     </details>
                 </div>
 
@@ -40,7 +40,7 @@ export const ProductCollection = () => {
                     
                     <div className="flex items-center justify-between">
                         <p className="text-base text-gray-500">
-                            6 de 25 resultados
+                            {listProduct.length} de {listProduct.length} resultados
                         </p>
 
                         <div className="ml-4">
@@ -57,24 +57,21 @@ export const ProductCollection = () => {
                     </div>
 
                     <div className="mt-4 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-3">
-                        <div className='m-2 mb-8'>
-                            <ProductCard />
-                        </div>
-                        <div className='m-2 mb-8'>
-                            <ProductCard />
-                        </div>
-                        <div className='m-2 mb-8'>
-                            <ProductCard />
-                        </div>
-                        <div className='m-2 mb-8'>
-                            <ProductCard />
-                        </div>
-                        <div className='m-2 mb-8'>
-                            <ProductCard />
-                        </div>
-                        <div className='m-2 mb-8'>
-                            <ProductCard />
-                        </div>
+                        {
+                            listProduct.map(prod => (
+                                <div className='m-2 mb-8'>
+                                    <ProductCard
+                                        id={prod.id}
+                                        img={prod.types[0].img[0]}
+                                        nColor={prod.types.length}
+                                        name={prod.name}
+                                        price={prod.price}
+                                        gen={prod.for}
+                                        key={prod.id}
+                                    />
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>

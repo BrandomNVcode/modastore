@@ -90,23 +90,18 @@ export const NavBar = ({fixed=true}) => {
                             <div className='w-full border-b border-gray-400 sm:hidden'></div>
                             <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                                 <li>
-                                    <Link to='/store'>
+                                    <Link to='/store/all'>
                                         <span className="block py-2 text-end">Productos</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/store?type=hombre'>
+                                    <Link to='/store/hombre'>
                                         <span className="block py-2 text-end">Hombre</span>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/store?type=mujer'>
+                                    <Link to='/store/mujer'>
                                         <span className="block py-2 text-end">Mujer</span>
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link to='/store?type=nino'>
-                                        <span className="block py-2 text-end">Niños</span>
                                     </Link>
                                 </li>
                             </ul>

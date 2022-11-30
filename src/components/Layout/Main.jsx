@@ -31,15 +31,6 @@ export const Main = () => {
                     />
                 </div>
                 <div>
-                    <SliderScreen key={2}
-                        title='Ropa para los más pequeños de casa'
-                        desc='Todo tipo de ropa para bebes y niños'
-                        titleBtn='Ver productos'
-                        img1={'img/sbebe.jpg'}
-                        img2={'img/sbebe2.jpg'}
-                    />
-                </div>
-                <div>
                     <SliderScreen key={3}
                         title='Ropa para hombres'
                         titleBtn='Ir a la tienda'

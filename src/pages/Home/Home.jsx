@@ -11,6 +11,8 @@ import { NavBar } from '../../components/Layout/NavBar';
 import { CarouselProducts } from '../../components/Products/CarouselProducts';
 import { Subscribete } from '../../components/Layout/Subscribete';
 import { Footer } from '../../components/Layout/Footer';
+import { productHombre } from '../../data/products';
+import { productMujer } from '../../data/productMujer';
 
 
 export const Home = () => {
@@ -73,7 +75,7 @@ export const Home = () => {
                 </div>
 
                 <div className='mt-12'>
-                    <CarouselProducts />
+                    <CarouselProducts listProd={productHombre}/>
                 </div>
 
                 <div className='mx-12 mt-24 flex justify-between items-center flex-col md:flex-row'>
@@ -82,16 +84,7 @@ export const Home = () => {
                 </div>
 
                 <div className='mt-12'>
-                    <CarouselProducts />
-                </div>
-
-                <div className='mx-12 mt-24 flex justify-between items-center flex-col md:flex-row'>
-                    <h2 className="mb-8 md:mb-0 font-bold font-sans text-lg md:text-2xl text-gray-600 text-center">DE TODO PARA LOS MÁS PEQUEÑOS</h2>
-                    <button className='bg-yellow-200 px-8 py-3 rounded-full btn-show'>VER MÁS</button>
-                </div>
-
-                <div className='mt-12'>
-                    <CarouselProducts />
+                    <CarouselProducts listProd={productMujer}/>
                 </div>
             </section>
 

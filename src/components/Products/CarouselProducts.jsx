@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import { productHombre } from '../../data/products';
 import { InfoBasic } from './InfoBasic';
 
 
-export const CarouselProducts = () => {
+export const CarouselProducts = ({listProd}) => {
 
     const [width, setWidth] = useState(window.innerWidth);
     const [nSlider, setNSlider] = useState(1);
     
-    const list = productHombre.filter(item => item.id < 8);
+    const list = listProd.filter(item => item.id < 8);
 
 
 

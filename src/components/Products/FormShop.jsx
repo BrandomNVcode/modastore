@@ -74,6 +74,7 @@ export const FormShop = ({typesColor, colorSelect, setColorSelect}) => {
 
                         <label htmlFor="size_xl" className="cursor-pointer p-0.5">
                             <input type="radio" name="size" value="XL" id="size_xl" className="peer sr-only" readOnly
+                                    defaultChecked
                                     onChange={handleInputForm}
                             />
                             <span className="group inline-flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium peer-checked:bg-black peer-checked:text-white">

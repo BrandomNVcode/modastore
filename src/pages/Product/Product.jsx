@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { Footer } from '../../components/Layout/Footer';
 import { NavBar } from '../../components/Layout/NavBar';
 import { CarouselProducts } from '../../components/Products/CarouselProducts';
 import { InfoProduct } from '../../components/Products/InfoProduct';
+import { productMujer } from '../../data/productMujer';
+import { productHombre } from '../../data/products';
 
 
 export const Product = () => {
+
+    const params = useParams();
+    
+    const [list, setList] = useState(productMujer);
+
+    useEffect(() => {
+        if(params.gen === 'hombre') {
+            setList(productHombre);
+        }
+    }, []);
+    
+
+
     return (
         <>
             <NavBar />
@@ -21,7 +37,7 @@ export const Product = () => {
                 </div>
 
                 <div className='mt-12'>
-                    <CarouselProducts />
+                    <CarouselProducts listProd={list}/>
                 </div>
             </section>
 

@@ -44,7 +44,7 @@ export const AppRouter = () => {
                 <Routes>
                     <Route path='/' element={<Home />}/>
                     <Route path='/product/:gen/:id' element={<Product />}/>
-                    <Route path='/store' element={<Store />}/>
+                    <Route path='/store/:gen' element={<Store />}/>
                     <Route path='/order' element={uid? <Order /> : <Navigate to={'/'}/>}/>
                     <Route path='/auth/login' element={!uid? <LoginScreen /> : <Navigate to={'/'}/>}/>
                     <Route path='/auth/register' element={!uid? <RegisterScreen /> : <Navigate to={'/'}/>}/>
