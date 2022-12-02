@@ -6,6 +6,7 @@ import './product.css';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SearchIcon from '@mui/icons-material/Search';
 import { addOrder } from '../../redux/features/order/orderSlice';
+import { sesion } from '../../helpers/sesion';
 
 
 
@@ -19,10 +20,15 @@ export const InfoBasic = ({item}) => {
     const incluido = orders.find(order => order.id === item.id);
 
     const handleAddCart = () => {
-        console.log(!incluido)
-        if(!incluido) {
+        if(!incluido && sesion()) {
             dispatch(addOrder({
                 id: item.id,
+                for: item.for,
+                category: item.category,
+                name: item.name,
+                price: item.price,
+                color: item.types[0].color,
+                img: item.types[0].img[0],
                 talla: 'S',
                 cant: 1
             }))

@@ -87,7 +87,13 @@ export const InfoProduct = () => {
                                 </div>
 
                                 <div className="mt-8">
-                                    <FormShop typesColor={infoProduct.types} setColorSelect={setcolorSelect} colorSelect={colorSelect}/>
+                                    <FormShop
+                                        product={infoProduct}
+                                        img={images[0]}
+                                        typesColor={infoProduct.types}
+                                        setColorSelect={setcolorSelect}
+                                        colorSelect={colorSelect}
+                                    />
                                 </div>
                             </div>
                         </div>

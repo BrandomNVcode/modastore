@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { sesion } from '../../helpers/sesion';
+import { addOrder } from '../../redux/features/order/orderSlice';
 import { ItemColor } from './Elements/ItemColor';
 
 
-export const FormShop = ({typesColor, colorSelect, setColorSelect}) => {
+export const FormShop = ({product, img, typesColor, colorSelect, setColorSelect}) => {
+
+    const dispatch = useDispatch();
+
+    const { orders } = useSelector(state => state.order);
+    const incluido = orders.find(order => order.id === product.id);
 
     const [cantidad, setCantidad] = useState(1);
     const [dataForm, setDataForm] = useState({
@@ -35,8 +43,19 @@ export const FormShop = ({typesColor, colorSelect, setColorSelect}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(dataForm)
-        console.log(cantidad)
+        if(sesion() && !incluido) {
+            dispatch(addOrder({
+                id: product.id,
+                for: product.for,
+                category: product.category,
+                name: product.name,
+                price: product.price,
+                color: dataForm.color,
+                img,
+                talla: dataForm.size,
+                cant: cantidad
+            }))
+        }
     }
 
 
@@ -138,8 +157,10 @@ export const FormShop = ({typesColor, colorSelect, setColorSelect}) => {
 
             <div className="mt-12 flex">
                 <button type="submit"
-                        className="block rounded bg-green-600 px-5 py-3 text-xs font-medium text-white hover:bg-green-500">
-                    Agregar al carrito de compras
+                        className={`block rounded bg-green-600 px-5 py-3 text-xs font-medium text-white ${incluido? 'bg-gray-300' : 'hover:bg-green-500'}`}
+                        disabled={incluido}
+                >
+                    {incluido? 'Producto agregado al carrito de compras' : 'Agregar al carrito de compras'}
                 </button>
             </div>
 

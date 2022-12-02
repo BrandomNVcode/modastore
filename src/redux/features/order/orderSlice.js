@@ -1,23 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    orders: [
-        /*{
-            id: 0,
-            talla: 'S',
-            cant: 1
-        },
-        {
-            id: 10,
-            talla: 'M',
-            cant: 2
-        },
-        {
-            id: 16,
-            talla: 'L',
-            cant: 1
-        },*/
-    ]
+    orders: []
 }
 
 export const orderSlice = createSlice({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateCantOrder } from '../../../redux/features/order/orderSlice';
+import { removeOrder, updateCantOrder } from '../../../redux/features/order/orderSlice';
 
 
 
@@ -10,6 +10,11 @@ export const ItemOrder = ({id, img, title, price, talla, cantidad}) => {
     const dispatch = useDispatch();
 
     const { orders } = useSelector(state => state.order);
+
+
+    const handleDeleteOrder = () => {
+        dispatch(removeOrder(id));
+    }
 
 
 
@@ -45,7 +50,10 @@ export const ItemOrder = ({id, img, title, price, talla, cantidad}) => {
                 </div>
             </div>
 
-            <button type='button' className='absolute top-0 right-0 w-5 h-5 p-0 pb-1 bg-red-400 rounded-sm cursor-pointer'>
+            <button type='button'
+                    className='absolute top-0 right-0 w-5 h-5 p-0 pb-1 bg-red-300 rounded-sm cursor-pointer'
+                    onClick={handleDeleteOrder}
+            >
                 <p className='text-xs text-white'>x</p>
             </button>
         </div>

@@ -5,25 +5,29 @@ import { products } from "../../data/dataset";
 import { ItemOrder } from "./Elements/ItemOrder";
 
 
+/*const changeOrders = (orders) => {
+    const list = [];
+    let price = 0;
+
+    orders.forEach(order => {
+        list.push(products.find(product => product.id === order.id));
+        price += (order.cant)*(products.find(prod => prod.id === order.id).price)
+    })
+
+    return list;
+}*/
+
 
 export const OrderSummary = () => {
 
     const { orders } = useSelector(state => state.order);
 
-    const [listOrder, setListOrder] = useState([]);
+    const [listOrder, setListOrder] = useState([...orders]);
     const [totalPrice, setTotalPrice] = useState(0);
     
     useEffect(() => {
-        
-        const list = [];
-        let price = 0;
 
-        orders.forEach(order => {
-            list.push(products.find(product => product.id === order.id));
-            price += (order.cant)*(products.find(prod => prod.id === order.id).price)
-        })
-        setListOrder(list);
-        setTotalPrice(price);
+        setListOrder([...orders]);
 
     }, [orders])
     
@@ -35,14 +39,15 @@ export const OrderSummary = () => {
                 <h3 className="text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 w-full  md:text-left text-gray-800">Resumen de Orden</h3>
                 <div className="flex justify-center items-center w-full mt-8  flex-col space-y-4 ">
                     {
+                        listOrder.length === orders.length && 
                         listOrder.map(product => (
                             <ItemOrder key={product.id}
                                 id={product.id}
-                                img={product.types[0].img[0]}
+                                img={product.img}
                                 price={product.price}
                                 title={product.name}
-                                talla={orders.find(order => order.id === product.id).talla}
-                                cantidad={orders.find(order => order.id === product.id).cant}
+                                talla={product.talla}
+                                cantidad={product.cant}
                             />
                         ))
                     }
