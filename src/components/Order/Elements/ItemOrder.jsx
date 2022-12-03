@@ -45,8 +45,8 @@ export const ItemOrder = ({id, img, title, price, talla, cantidad}) => {
                     </div>
                 </div>
                 <div className="flex mt-2 md:mt-0 md:justify-end items-center w-full gap-4">
-                    <p className="text-base lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-400 line-through">${(price*cantidad).toFixed(2)}</p>
-                    <p className="text-base lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-800">${(price*1.2*cantidad).toFixed(2)}</p>
+                    <p className="text-base lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-400 line-through">${(price*1.2*cantidad).toFixed(2)}</p>
+                    <p className="text-base lg:text-2xl font-semibold leading-5 lg:leading-6 text-gray-800">${(price*cantidad).toFixed(2)}</p>
                 </div>
             </div>
 

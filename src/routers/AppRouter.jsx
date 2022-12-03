@@ -6,6 +6,7 @@ import {
     Route,
     Navigate
 } from "react-router-dom";
+import { Payment } from '../components/Payment/Payment';
 import { sesion } from '../helpers/sesion';
 import { LoginScreen } from '../pages/Auth/LoginScreen';
 import { RegisterScreen } from '../pages/Auth/RegisterScreen';
@@ -48,6 +49,7 @@ export const AppRouter = () => {
                     <Route path='/order' element={uid? <Order /> : <Navigate to={'/'}/>}/>
                     <Route path='/auth/login' element={!uid? <LoginScreen /> : <Navigate to={'/'}/>}/>
                     <Route path='/auth/register' element={!uid? <RegisterScreen /> : <Navigate to={'/'}/>}/>
+                    <Route path='/prueba' element={<Payment />}/>
                 </Routes>
             </BrowserRouter>
         }

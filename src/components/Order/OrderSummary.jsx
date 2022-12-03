@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { products } from "../../data/dataset";
+import { Modal } from "../Modal/Modal";
+//import { products } from "../../data/dataset";
+import { Payment } from "../Payment/Payment";
 //import { products } from "../../data/products";
 import { ItemOrder } from "./Elements/ItemOrder";
 
@@ -20,14 +22,23 @@ import { ItemOrder } from "./Elements/ItemOrder";
 
 export const OrderSummary = () => {
 
+
+
     const { orders } = useSelector(state => state.order);
 
     const [listOrder, setListOrder] = useState([...orders]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [visible, setVisible] = useState(false);
     
     useEffect(() => {
 
         setListOrder([...orders]);
+
+        let price = 0;
+
+        orders.forEach(order => price += (order.cant)*(order.price))
+
+        setTotalPrice(price);
 
     }, [orders])
     
@@ -70,16 +81,25 @@ export const OrderSummary = () => {
                         </div>
                         <div className="flex justify-between items-center w-full">
                             <p className="text-base font-semibold leading-4 text-gray-800">Total</p>
-                            <p className="text-base font-semibold leading-4 text-gray-600">${(totalPrice + 10).toFixed(2)}</p>
+                            <p className="text-base font-semibold leading-4 text-gray-600">${totalPrice <= 0 ? 0 : (totalPrice + 10).toFixed(2)}</p>
                         </div>
                         <div className="flex w-full justify-center items-center pt-1 md:pt-4  xl:pt-8 space-y-6 md:space-y-8 flex-col">
-                            <button className="py-5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800  w-full text-base font-medium leading-4 text-white bg-gray-800 hover:bg-black">
+                            <button
+                                className={`py-5 focus:outline-none focus:ring-2 focus:ring-offset-2  focus:ring-gray-800  w-full text-base font-medium leading-4 text-white ${totalPrice <= 0? 'bg-gray-400 cursor-not-allowed' : 'bg-gray-800 hover:bg-black'}`}
+                                disabled={(totalPrice <= 0)}
+                                onClick={() => setVisible(true)}
+                                >
                                 Pagar ahora
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <Modal visible={visible} setIsVisible={setVisible}>
+                <Payment price={totalPrice}/>
+            </Modal>
+            
         </div>
     );
 };
