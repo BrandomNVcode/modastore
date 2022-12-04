@@ -17,7 +17,7 @@ export const InfoBasic = ({item}) => {
     const navegacion = useNavigate();
 
     const { orders } = useSelector(state => state.order);
-    const incluido = orders.find(order => order.id === item.id);
+    const incluido = orders.find(order => (order.id === item.id) && (order.for === item.for));
 
     const handleAddCart = () => {
         if(!incluido && sesion()) {
