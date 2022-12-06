@@ -66,7 +66,7 @@ export const NavBar = ({fixed=true}) => {
                                             </Link>
                                         </li>
                                         <li>
-                                            <div onClick={handleLogout}>
+                                            <div onClick={handleLogout} className='cursor-pointer'>
                                                 <span className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</span>
                                             </div>
                                         </li>
@@ -80,7 +80,7 @@ export const NavBar = ({fixed=true}) => {
                                         </li>
                                         <li>
                                             <Link to='/auth/register'>
-                                                <span className="block py-2 text-end font-semibold">Login</span>
+                                                <span className="block py-2 text-end font-semibold">Register</span>
                                             </Link>
                                         </li>
                                     </>
@@ -135,7 +135,7 @@ export const NavBar = ({fixed=true}) => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <div onClick={handleLogout}>
+                                        <div onClick={handleLogout} className='cursor-pointer'>
                                             <span className="block py-2 text-end font-bold text-red-800">Cerrar Sesión</span>
                                         </div>
                                     </li>

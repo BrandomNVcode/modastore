@@ -13,6 +13,7 @@ import { Subscribete } from '../../components/Layout/Subscribete';
 import { Footer } from '../../components/Layout/Footer';
 import { productHombre } from '../../data/products';
 import { productMujer } from '../../data/productMujer';
+import { Link } from 'react-router-dom';
 
 
 export const Home = () => {
@@ -71,7 +72,9 @@ export const Home = () => {
             <section className='my-16 md:mx-16'>
                 <div className='mx-12 mt-24 flex justify-between items-center flex-col md:flex-row'>
                     <h2 className="mb-8 md:mb-0 font-bold font-sans text-lg md:text-2xl text-gray-600 text-center">DE TODO PARA HOMBRES</h2>
-                    <button className='bg-yellow-200 px-8 py-2 md:py-3 rounded-full btn-show'>VER MÁS</button>
+                    <Link to={'/store/hombre'}>
+                        <div className='bg-yellow-200 px-8 py-2 md:py-3 rounded-full btn-show'>VER MÁS</div>
+                    </Link>
                 </div>
 
                 <div className='mt-12'>
@@ -80,7 +83,9 @@ export const Home = () => {
 
                 <div className='mx-12 mt-24 flex justify-between items-center flex-col md:flex-row'>
                     <h2 className="mb-8 md:mb-0 font-bold font-sans text-lg md:text-2xl text-gray-600 text-center">DE TODO PARA MUJERES</h2>
-                    <button className='bg-yellow-200 px-8 py-3 rounded-full btn-show'>VER MÁS</button>
+                    <Link to={'/store/mujer'}>
+                        <div className='bg-yellow-200 px-8 py-3 rounded-full btn-show'>VER MÁS</div>
+                    </Link>
                 </div>
 
                 <div className='mt-12'>

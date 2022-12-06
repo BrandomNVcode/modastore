@@ -28,6 +28,7 @@ export const Main = () => {
                         desc='Aprovecha todas nuestras ofertas en blusas y polos'
                         img1={'img/smujer3.png'}
                         img2={'img/smujer.png'}
+                        link={'/store/mujer'}
                     />
                 </div>
                 <div>
@@ -37,6 +38,7 @@ export const Main = () => {
                         desc='Ofertas en polos, jeans y shorts'
                         img1={'img/shombre.png'}
                         img2={'img/shombre3.jpg'}
+                        link={'/store/hombre'}
                     />
                 </div>
             </Slider>
